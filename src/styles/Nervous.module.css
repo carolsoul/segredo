@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+:root{
+    --red: #7A1022;
+    --light-red: #FE5F62;
+    --bright-red: #CA0F2E;
+    --green: #218A0A;
+    --light-green: #A9F65B;
+    --bright-green: #1C813E;
+    --pink: #FF80AA;
+    --light-pink: #FFB3CC;
+    --bright-pink: #FF407F;
+    --off-white: #FFFBDC;
+}
+
+.nervousContainer {
+    background-color: #000;
+    color: var(--off-white);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  

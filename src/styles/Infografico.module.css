@@ -1,0 +1,350 @@
+/* === RESET E VARIÁVEIS === */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --red: #7A1022;
+    --light-red: #FE5F62;
+    --bright-red: #CA0F2E;
+    --green: #218A0A;
+    --light-green: #A9F65B;
+    --bright-green: #1C813E;
+    --pink: #FF80AA;
+    --light-pink: #FFB3CC;
+    --bright-pink: #FF407F;
+    --off-white: #FFFBDC;
+
+    --next-padding: 10px 50px;
+    --next-font-size: 15px;
+    --next-font-weight: bold;
+    --next-radius: 30px;
+}
+
+/* === CONTAINER GERAL === */
+.infograficoContainer {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--off-white);
+    max-width: 100vw;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+section{
+    padding: 40px 30px;
+}
+
+/* === TÍTULOS === */
+.infTitle {
+    color: var(--red);
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-top: 40px;
+}
+
+.infSubtitle {
+    color: var(--pink);
+    font-size: 15px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* === PERFIL === */
+.profileContainer {
+    border-top: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
+    width: 100%;
+    text-align: start;
+    color: var(--red);
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.profileContainer p {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.profileContainer h2 {
+    font-size: 15px;
+}
+
+/* === LINHAS DO INFOGRÁFICO === */
+.infRow1, .infRow2, .infRow3, .infRow4, .infRow5, .infRow6 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.infRow1, .infRow2{
+    margin-top: 20px;
+}
+
+.infRow3 {
+    position: relative;
+    top: -15px;
+}
+
+.infRow5 {
+    position: relative;
+    top: -20px;
+}
+
+.infRow6 {
+    position: relative;
+    top: -80px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--red);
+}
+
+/* === ELEMENTOS INDIVIDUAIS === */
+.eyeStatus {
+    margin-top: 20px;
+}
+
+.lifeTime {
+    width: 100px;
+    text-align: end;
+    position: relative;
+    top: -30px;
+}
+
+.tattoos {
+    width: 60px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.colors {
+    position: relative;
+    top: -55px;
+}
+
+.legs {
+    width: 60px;
+    margin-left: 20px;
+}
+
+.feet {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.genre {
+    width: 100%;
+    text-align: start;
+    position: relative;
+    top: -100px;
+}
+
+.media {
+    text-align: end;
+    position: relative;
+    top: -30px;
+}
+
+.isabela{
+    position: absolute;
+    top: 240px;
+    left: 130px;
+}
+
+/* === TEXTO, ÍCONES, LISTAS === */
+ul {
+    width: 100px;
+    text-align: start;
+}
+
+.interestsIcon {
+    width: 25px;
+    height: 25px;
+}
+
+.eatIcon {
+    width: 32px;
+    height: 32px;
+}
+
+.text1 {
+    font-size: 12px;
+    line-height: 23px;
+    color: var(--red);
+    text-align: justify;
+}
+
+/* === GRIDS E CORES === */
+.icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.culinary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.watched {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+}
+
+.squares {
+    display: flex;
+    gap: 7px;
+}
+
+.green, .black, .white {
+    width: 20px;
+    height: 20px;
+}
+
+.green { background-color: var(--green); }
+.black { background-color: #000000; }
+.white { background-color: #FFFFFF; }
+
+/* === MURAL COLORIDO === */
+.muralGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.red1, .pink1, .green1, .green2, .red2, .pink2, .pink3, .green3, .red3 {
+    width: 130px;
+    height: 150px;
+    border-radius: 7px;
+}
+
+.red1 { background-color: var(--red); transform: rotate(14.79deg); }
+
+.pink1 { background-color: var(--pink); transform: rotate(-3deg); }
+
+.green1 { background-color: var(--green); transform: rotate(12deg); }
+
+.green2 { background-color: var(--light-green); transform: rotate(-10.2deg); }
+
+.red2 { background-color: var(--light-red); transform: rotate(8deg); }
+
+.pink2 { background-color: var(--light-pink); transform: rotate(-8deg); }
+
+.pink3 { background-color: var(--bright-pink); transform: rotate(14.79deg); }
+
+.green3 { background-color: var(--bright-green); transform: rotate(-3deg); }
+
+.red3 { background-color: var(--bright-red); transform: rotate(12deg); }
+
+.red1 p, .red2 p, .red3 p, .pink1 p, .pink2 p, .pink3 p, .green1 p, .green2 p, .green3 p{
+    color: var(--off-white);
+    margin: 50px 10px;
+}
+
+/* === STICKERS === */
+
+.sticker {
+    position: absolute;
+    z-index: 10;
+}
+
+.sticker1{
+    bottom: -580px;
+    left: 40px;
+}
+
+.sticker2{
+    bottom: -595px;
+    right: 110px;
+}
+
+.sticker3{
+    bottom: -790px;
+    left: 60px;
+}
+
+.sticker4{
+    bottom: -770px;
+    right: 100px;
+}
+
+.sticker5{
+    bottom: -770px;
+    right: 0px;
+}
+
+.sticker6{
+    bottom: -950px;
+    left: 70px;
+}
+
+.sticker7{
+    bottom: -940px;
+    right: 100px;
+}
+
+.sticker8{
+    bottom: -1090px;
+    left: 80px;
+}
+
+/* === BOTÃO "PRÓXIMO" === */
+.infNextButton {
+    padding: var(--next-padding);
+    font-size: var(--next-font-size);
+    font-weight: var(--next-font-weight);
+    border-radius: var(--next-radius);
+    border: none;
+    cursor: pointer;
+    background-color: var(--red);
+    color: var(--off-white);
+    margin: 0 0 0 auto;
+    margin-bottom: 40px;
+    margin-right: 40px;
+}
+
+.infNextButton:hover {
+    background-color: var(--bright-red);
+}
+
+/* === TEXTOS GENÉRICOS === */
+.interestsContainer p, .eyeStatus p, .tattoos p, li, .legs p, .colors p, .feet p, .genre p, .lifeTime p {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: bold;
+    text-align: start;
+}
+
+.dislikes p, .dresscode p, .food p {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: bold;
+    text-align: end;
+}
+
+.dresscode {
+    text-align: end;
+}
+
+.dislikes {
+    display: flex;
+    gap: 10px;
+}

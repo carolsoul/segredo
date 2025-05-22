@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+:root{
+    --red: #7A1022;
+    --light-red: #FE5F62;
+    --bright-red: #CA0F2E;
+    --green: #218A0A;
+    --light-green: #A9F65B;
+    --bright-green: #1C813E;
+    --pink: #FF80AA;
+    --light-pink: #FFB3CC;
+    --bright-pink: #FF407F;
+    --off-white: #FFFBDC;
+
+    --next-padding: 10px 50px;
+    --next-font-size: 15px;
+    --next-font-weight: bold;
+    --next-radius: 30px;
+}
+
+.quizContainer{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 40px;
+    background-color: var(--red);
+}
+
+.quizTitle{
+    font-size: 20px;
+    padding-top: 40px;
+    text-align: center;
+    color: var(--off-white);
+}
+  
+.pergunta {
+    font-size: 15px;
+    padding: 20px;
+    text-align: start;
+    width: 100%;
+    color: var(--off-white);
+}
+  
+  .opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .quizOption {
+    width: 345px;
+    padding: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--pink);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: var(--red);
+  }
+  
+  .quizOption:hover {
+    background-color: var(--off-white);
+  }
+  
+  .quizOption:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .selecionada {
+    background-color: var(--bright-pink);
+    font-weight: bold;
+  }
+  
+  .quizMensagem {
+    margin-top: 10px;
+    font-style: italic;
+    color: var(--off-white);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .btnProximo {
+    padding: var(--next-padding);
+    font-size: var(--next-font-size);
+    font-weight: var(--next-font-weight);
+    border-radius: var(--next-radius);
+    border: none;
+    cursor: pointer;
+    background-color: var(--pink);
+    color: var(--off-white);
+    margin: auto 0 0 auto;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

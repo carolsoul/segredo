@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+:root{
+    --red: #7A1022;
+    --light-red: #FE5F62;
+    --bright-red: #CA0F2E;
+    --green: #218A0A;
+    --light-green: #A9F65B;
+    --bright-green: #1C813E;
+    --pink: #FF80AA;
+    --light-pink: #FFB3CC;
+    --bright-pink: #FF407F;
+    --off-white: #FFFBDC;
+
+    --next-padding: 10px 50px;
+    --next-font-size: 15px;
+    --next-font-weight: bold;
+    --next-radius: 30px;
+}
+
+.memoriaContainer{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--green);
+}
+
+.memoTitle{
+    font-size: 20px;
+    padding-top: 40px;
+    text-align: center;
+    color: var(--off-white);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    justify-content: center;
+    margin: 90px 20px 40px 20px;
+}
+  
+.card {
+    perspective: 1000px;
+    cursor: pointer;
+    pointer-events: all;
+}
+  
+.cardInner {
+    width: 120px;
+    height: 164px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+  
+.card img {
+    width: 110px;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+  
+.card.flipped .cardInner {
+    transform: rotateY(180deg);
+}
+  
+.cardBack img{
+    width: 130px;
+    height: 164px;
+}
+
+  .cardFront,
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    pointer-events: none;
+}
+
+.cardFront{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    backface-visibility: hidden;
+    align-items: center;
+}
+  
+.cardBack {
+    transform: rotateY(0deg);
+}
+  
+.cardFront {
+    transform: rotateY(180deg);
+}
+
+@keyframes popUp {
+    0% {
+      transform: scale(0.7);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+.victoryMessage{
+    font-size: 15px;
+    color: var(--pink);
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 40px;
+    animation: popUp 0.4s ease-out forwards;
+}
+
+
+.memoNextBtn{
+    padding: var(--next-padding);
+    font-size: var(--next-font-size);
+    font-weight: var(--next-font-weight);
+    border-radius: var(--next-radius);
+    border: none;
+    cursor: pointer;
+    background-color: var(--pink);
+    color: var(--off-white);
+    margin: 0 0 0 auto;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    animation: popUp 0.4s ease-out forwards;
+}
