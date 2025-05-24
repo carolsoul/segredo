@@ -10,28 +10,24 @@ function FaceId() {
 
   useEffect(() => {
     const loadModels = async () => {
-      const MODEL_URL = '/models';
       await Promise.all([
         faceapi.nets.tinyFaceDetector.loadFromUri('/models/tiny_face_detector_model'),
         faceapi.nets.faceLandmark68Net.loadFromUri('/models/face_landmark_68_model'),
         faceapi.nets.faceRecognitionNet.loadFromUri('/models/face_recognition_model'),
         faceapi.nets.ssdMobilenetv1.loadFromUri('/models/ssd_mobilenetv1_model')
       ]);
-
       startVideo();
     };
 
     const startVideo = () => {
       navigator.mediaDevices.getUserMedia({ video: true })
         .then((stream) => {
-          console.log('Câmera acessada com sucesso');
           if (videoRef.current) {
             videoRef.current.srcObject = stream;
           }
         })
         .catch((err) => console.error('Erro ao acessar a câmera:', err));
     };
-
 
     const detectar = async () => {
       const imagemReferencia = await faceapi.fetchImage('/referencia.jpg');
@@ -45,7 +41,10 @@ function FaceId() {
         return;
       }
 
-      const faceMatcher = new faceapi.FaceMatcher(resultadoReferencia.descriptor, 0.6);
+      const faceMatcher = new faceapi.FaceMatcher(
+        new faceapi.LabeledFaceDescriptors('referencia', [resultadoReferencia.descriptor]),
+        0.6
+      );
 
       const intervalo = setInterval(async () => {
         if (!videoRef.current) return;
@@ -57,9 +56,10 @@ function FaceId() {
 
         if (detections) {
           const resultado = faceMatcher.findBestMatch(detections.descriptor);
-          if (resultado.label === 'person') {
+          console.log('Resultado:', resultado); // 👈 para debug
+          if (resultado.label === 'referencia') {
             setReconhecido(true);
-            clearInterval(intervalo); // parando quando reconhecido
+            clearInterval(intervalo);
           }
         }
       }, 1000);
@@ -77,7 +77,7 @@ function FaceId() {
       <h1 className={styles.faceTitle}>Encaixe o rosto no círculo</h1>
 
       <div className={styles.camera}>
-        <video ref={videoRef} autoPlay muted width="300" height="500" style={{ borderRadius: '50%' }} />
+        <video ref={videoRef} autoPlay />
       </div>
 
       <button
