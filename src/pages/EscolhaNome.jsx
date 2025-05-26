@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import maoCoracao from '../assets/mão-coração.png';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/EscolhaNome.module.css';
 
+const nomes = ['amor', 'princesa', 'meu bem', 'Isabela', 'gatinha'];
+
 function EscolhaNome() {
     const navigate = useNavigate(); // hook para navegação
+    const [nomeSelecionado, setNomeSelecionado] = useState('');
+    
+    const escolherNome = (nome) => {
+      setNomeSelecionado(nome)
+      localStorage.setItem('nomeEscolhido', nome)
+    };
       
     const irParaInfografico = () => {
         navigate('/infografico'); // muda de página
@@ -23,19 +31,19 @@ function EscolhaNome() {
 
       <div className={styles.nomeBtnContainer}>
         <div>
-        <button>amor</button>
-        <button>princesa</button>
+        <button onClick={() => escolherNome('amor')}>amor</button>
+          <button onClick={() => escolherNome('princesa')}>princesa</button>
         </div>
 
         <div>
-        <button>meu bem</button>
-        <button>Isabela</button>
-        <button>gatinha</button>
+          <button onClick={() => escolherNome('meu bem')}>meu bem</button>
+          <button onClick={() => escolherNome('Isabela')}>Isabela</button>
+          <button onClick={() => escolherNome('gatinha')}>gatinha</button>
         </div>
       
       </div>
 
-      <button className={styles.nextButton} onClick={irParaInfografico}>Próximo</button>
+      <button className={styles.nextButton} onClick={irParaInfografico} disabled={!nomeSelecionado}>Próximo</button>
     </div>
   );
 }

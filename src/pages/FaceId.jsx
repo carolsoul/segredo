@@ -7,27 +7,44 @@ function FaceId() {
   const videoRef = useRef(null);
   const navigate = useNavigate();
   const [reconhecido, setReconhecido] = useState(false);
+  const [status, setStatus] = useState('Iniciando câmera...')
 
   useEffect(() => {
-    const loadModels = async () => {
-      await Promise.all([
-        faceapi.nets.tinyFaceDetector.loadFromUri('/models/tiny_face_detector_model'),
-        faceapi.nets.faceLandmark68Net.loadFromUri('/models/face_landmark_68_model'),
-        faceapi.nets.faceRecognitionNet.loadFromUri('/models/face_recognition_model'),
-        faceapi.nets.ssdMobilenetv1.loadFromUri('/models/ssd_mobilenetv1_model')
-      ]);
-      startVideo();
-    };
+  startVideo(); // inicia a câmera imediatamente
+  loadModels().then(detectar); // em paralelo
 
-    const startVideo = () => {
+  return () => {
+    // limpar recursos ao desmontar
+    if (videoRef.current?.srcObject) {
+      videoRef.current.srcObject.getTracks().forEach(track => track.stop());
+    }
+  };
+}, []);
+
+const startVideo = () => {
       navigator.mediaDevices.getUserMedia({ video: true })
         .then((stream) => {
           if (videoRef.current) {
             videoRef.current.srcObject = stream;
+            setStatus('Reconhecendo você...')
           }
         })
         .catch((err) => console.error('Erro ao acessar a câmera:', err));
+        setStatus('Erro ao acessar a câmera! :(')
     };
+
+const loadModels = async () => {
+  try {
+    await Promise.all([
+      faceapi.nets.tinyFaceDetector.loadFromUri('/models/tiny_face_detector_model'),
+      faceapi.nets.faceLandmark68Net.loadFromUri('/models/face_landmark_68_model'),
+      faceapi.nets.faceRecognitionNet.loadFromUri('/models/face_recognition_model'),
+      faceapi.nets.ssdMobilenetv1.loadFromUri('/models/ssd_mobilenetv1_model')
+    ]);
+  } catch (err) {
+    console.error('Erro ao carregar modelos:', err);
+  }
+};
 
     const detectar = async () => {
       const imagemReferencia = await faceapi.fetchImage('/referencia.jpg');
@@ -56,17 +73,15 @@ function FaceId() {
 
         if (detections) {
           const resultado = faceMatcher.findBestMatch(detections.descriptor);
-          console.log('Resultado:', resultado); // 👈 para debug
+          console.log('Resultado:', resultado); // para debug
           if (resultado.label === 'referencia') {
             setReconhecido(true);
+            setStatus('É você mesmo! :D')
             clearInterval(intervalo);
           }
         }
       }, 1000);
     };
-
-    loadModels().then(detectar);
-  }, []);
 
   const irParaEscolhaNome = () => {
     if (reconhecido) navigate('/escolha-de-nome');
@@ -77,16 +92,12 @@ function FaceId() {
       <h1 className={styles.faceTitle}>Encaixe o rosto no círculo</h1>
 
       <div className={styles.camera}>
-        <video ref={videoRef} autoPlay />
+        <video ref={videoRef} autoPlay muted/>
       </div>
 
-      <button
-        className={styles.faceBtn}
-        onClick={irParaEscolhaNome}
-        disabled={!reconhecido}
-      >
-        {reconhecido ? 'Próximo' : 'Reconhecendo...'}
-      </button>
+      <p className={styles.statusMessage}>{status}</p>
+
+      <button className={styles.faceBtn} onClick={irParaEscolhaNome} disabled={!reconhecido}> Próximo </button>
     </div>
   );
 }

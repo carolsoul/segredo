@@ -63,6 +63,16 @@ video{
     }
 }
 
+.statusMessage {
+  margin: 30px;
+  font-size: 1rem;
+  text-align: center;
+  background-color: var(--pink);
+  padding: 20px;
+  color: var(--off-white);
+  border-radius: 5px;
+}
+
 .faceBtn {
     padding: var(--next-padding);
     font-size: var(--next-font-size);

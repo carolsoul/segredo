@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import styles from '../styles/Infografico.module.css';
 import isabela from '../assets/isabela.png';
 import livro from '../assets/livro.svg';
@@ -22,7 +23,6 @@ import filme1 from '../assets/filme-1.svg';
 import serie1 from '../assets/serie-1.svg';
 import filme2 from '../assets/filme-2.svg';
 import serie2 from '../assets/serie-2.svg';
-
 //stickers
 import sticker1 from '../assets/tape.svg'
 import sticker2 from '../assets/joinha.svg'
@@ -37,6 +37,12 @@ import { style } from 'framer-motion/client';
 
 function Infografico() {
     const navigate = useNavigate(); // hook para navegação
+    const [nome, setNome] = useState('');
+
+    useEffect(() => {
+    const nomeSalvo = localStorage.getItem('nomeEscolhido');
+    setNome(nomeSalvo || '');
+  }, []);
           
     const irParaJogoMemoria = () => {
         navigate('/jogo-da-memoria'); // muda de página
@@ -182,7 +188,7 @@ function Infografico() {
 
       <div className={styles.text1}>
         <p>
-          E aí, [nome], acertei alguma coisa? Pensei que acharia interessante um infográfico desse com informações que sei sobre você, espero que tenha gostado! Quero que saiba que no meu cérebro há uma parte designada apenas para a sua pessoa e isto compõe apenas algumas das milhares de informações que, ao longo desses quase 10 anos (onde 7 deles te desejei de longe), consegui observar e guardar com carinho na minha cabeça. Mas isso não é tudo! Se rolar a página mais pra baixo vai achar um mural e nele contém coisas que quero que saiba, aproveite aí!
+          E aí, {nome && `${nome}`}, acertei alguma coisa? Pensei que acharia interessante um infográfico desse com informações que sei sobre você, espero que tenha gostado! Quero que saiba que no meu cérebro há uma parte designada apenas para a sua pessoa e isto compõe apenas algumas das milhares de informações que, ao longo desses quase 10 anos (onde 7 deles te desejei de longe), consegui observar e guardar com carinho na minha cabeça. Mas isso não é tudo! Se rolar a página mais pra baixo vai achar um mural e nele contém coisas que quero que saiba, aproveite aí!
           </p>
       </div>
       </section>

@@ -22,8 +22,7 @@ function Letter() {
                 <div className={styles.back}></div>
                 <div className={styles.letter}>
                     <div className={styles.text}>
-                        <h3>Aceita ser minha namorada?</h3>
-                        <p>Oficialmente dessa vez</p>
+                        <h3>Aceita ser minha namorada oficialmente?</h3>
                     </div>
                 </div>
 
@@ -31,10 +30,6 @@ function Letter() {
                 <div className={styles.top}></div>
                 <div className={styles.shadow}></div>
             </div>
-
-            
-
-
 
             <div className={styles.btnContainer}>
                 <button className={styles.noBtn} onClick={irParaSim}>Não</button>

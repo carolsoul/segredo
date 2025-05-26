@@ -63,24 +63,31 @@ export default function Quiz() {
   };
 
   return (
-    <div className={styles.quizContainer}>
+    <div className={`${styles.quizContainer} ${styles['tema' + index]}`}>
+
       <h2 className={styles.quizTitle}>Escolha com sabedoria...</h2>
+
       <p className={styles.pergunta}>{perguntaAtual.pergunta}</p>
 
       <div className={styles.opcoes}>
+
         {perguntaAtual.opcoes.map((opcao, i) => (
-          <button
-            key={i}
-            className={`${styles.quizOption} ${respostaSelecionada === i ? styles.selecionada : ''}`}
-            onClick={() => handleOpcaoClick(i)}
-            disabled={bloqueado && respostaSelecionada !== i}
+          <div key={i} className={styles.opcaoWrapper}>
+
+          <button className={`${styles.quizOption} ${respostaSelecionada === i ? styles.selecionada : ''}`} onClick={() => handleOpcaoClick(i)} disabled={bloqueado && respostaSelecionada !== i}
           >
             {opcao.texto}
           </button>
+
+           {/* Mensagem abaixo da opção selecionada */}
+        {respostaSelecionada === i && mensagem && (
+          <div className={styles.quizMensagem}>{mensagem}</div>
+        )}
+        
+          </div>
         ))}
       </div>
 
-      {mensagem && <div className={styles.quizMensagem}>{mensagem}</div>}
 
       {index === quizData.length - 1 && !mensagem && (
         <button className={styles.btnProximo} onClick={irParaProximaPagina}>

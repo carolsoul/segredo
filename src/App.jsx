@@ -11,6 +11,8 @@ import Quiz from './pages/Quiz'
 import Nervous from './pages/Nervous'
 import Breathing from './pages/Breathing'
 import Letter from './pages/Letter'
+import No from './pages/No'
+import Yes from './pages/Yes'
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/nervosismo" element={<Nervous />} />
         <Route path="/respiracao-guiada" element={<Breathing />} />
         <Route path="/carta" element={<Letter />} />
+        <Route path="/nao" element={<No />} />
+        <Route path="/sim" element={<Yes />} />
       </Routes>
     </Router>
   );

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -107,7 +109,7 @@ body{
 
 .letter{
     position: absolute;
-    background: white;
+    background: #f3f1db;
     width: 230px;
     height: 180px;
     top: 10px;
@@ -123,10 +125,16 @@ body{
 
 .text{
     text-align: center;
-    margin: 80px 20px;
-    color: var(--red);
+    margin: 60px 20px;
     position: relative;
     top: -20px;
+}
+
+.text h3{
+    font-family: "Mea Culpa", cursive;
+    font-size: 28px;
+    font-weight: 100;
+    color: #8b6b00;
 }
 
 
@@ -155,23 +163,16 @@ body{
     border-radius: var(--next-radius);
     border: none;
     cursor: pointer;
-    color: var(--red);
     animation: popUp 0.4s ease-out forwards;
 }
 
 .noBtn{
-    background-color: var(--bright-red);
+    background-color: #aaa;
     transition: all 0.3s ease-in-out;
-}
-.noBtn:hover{
-    background-color: var(--light-red);
 }
 
 .yesBtn{
     background-color: var(--green);
     color: var(--off-white);
     transition: all 0.3s ease-in-out;
-}
-.yesBtn:hover{
-    background-color: var(--light-green);
 }

@@ -73,25 +73,31 @@ function JogoMemoria() {
     if (bloqueado || carta.isFlipped || carta.isMatched) return;
 
     if (carta.isCoringa) {
-      audio.play();
-    
+      setBloqueado(true);
+
       // vira a carta coringa
       setCartas((prev) =>
         prev.map((c) =>
           c.id === carta.id ? { ...c, isFlipped: true } : c
         )
       );
+
+      //toca o áudio
+      audio.currentTime = 0;
+      audio.play();
+
+      audio.onended = () => {
+        setBloqueado(false)
+      }
     
       if (viradas.length === 1) {
         const [outra] = viradas;
-        setTimeout(() => {
           setCartas((cartas) =>
             cartas.map((c) =>
               c.id === outra.id ? { ...c, isFlipped: false } : c
             )
           );
           setViradas([]);
-        }, 1000);
       }
     
       return;

@@ -13,6 +13,7 @@ function Nervous() {
 
         return () => clearTimeout(timer);
     }, [navigate])
+    
       return (
         <div className={styles.nervousContainer}>
             <p>Está preparada? Eu não estou.</p>
