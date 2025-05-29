@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-hook/window-size": "^3.1.1",
     "canvas-confetti": "^1.9.3",
     "face-api.js": "^0.22.2",
     "framer-motion": "^12.7.2",
     "react": "^19.0.0",
+    "react-confetti": "^6.4.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0"
   },

@@ -22,14 +22,37 @@ body{
 }
 
 .yesContainer{
-    background-color: var(--red);
+    background-color: var(--bright-pink);
     color: var(--off-white);
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     text-align: center;
     animation: fadeIn 2s ease-in-out;
+    padding: 40px 0;
+}
+
+@keyframes slideInEllipticTopBack {
+  0% {
+    transform: translateY(-600px) scaleX(2.5) scaleY(0.2);
+    transform-origin: top center;
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+    transform-origin: top center;
+    opacity: 1;
+  }
+}
+
+.slideInEllipticTopBack {
+  animation: slideInEllipticTopBack 2.5s ease-out both;
+}
+
+footer p{
+    font-size: small;
 }
