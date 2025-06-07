@@ -7,25 +7,25 @@ const quizData = [
   {
     pergunta: 'Entre estas, qual é sua recordação preferida?',
     opcoes: [
-      { texto: 'ver o mar juntas', mensagem: 'O mar tem mesmo algo mágico, né?' },
-      { texto: '1º date com macarrão congelado e vinho barato', mensagem: 'Clássico do caos romântico.' },
-      { texto: 'Airbnb no carnaval', mensagem: 'Uma lembrança caótica e perfeita.' },
+      { texto: 'ver o mar juntas', mensagem: 'Apesar dos pesares e do medo do mar eu tamém gostei, vamos repetir!' },
+      { texto: '1º date com macarrão congelado e vinho barato', mensagem: 'Foi aí que te ganhei, não foi?' },
+      { texto: 'Airbnb no carnaval', mensagem: 'Uma lembrança caótica e perfeita. Como seria se morássemos juntas?' },
     ],
   },
   {
-    pergunta: 'Qual aspecto mais precisaríamos melhorar?',
+    pergunta: 'E qual vai ser nosso próximo date?',
     opcoes: [
-      { texto: 'Comunicação', mensagem: 'Ouvir mais, falar com carinho.' },
-      { texto: 'Organização', mensagem: 'Menos bagunça, mais planejamento.' },
-      { texto: 'Conciliação de tempo', mensagem: 'Ajustar a rotina pode ser um bom recomeço.' },
+      { texto: 'Cozinhar juntas', mensagem: 'Ótima ideia, vamos fazer doce ou salgado?' },
+      { texto: 'Cafeteria', mensagem: 'Meu lugar favorito! Pães, bolos, doces, café e você!' },
+      { texto: 'Baladinha', mensagem: 'Quem sabe Submundo 808? Vamos dando uma olhada no que tem de bom :D' },
     ],
   },
   {
     pergunta: 'Como você se sente sobre nós?',
     opcoes: [
-      { texto: 'Segura', mensagem: 'Isso significa muito!' },
-      { texto: 'Esperançosa', mensagem: 'Ainda temos tanto por viver.' },
-      { texto: 'Confusa às vezes', mensagem: 'Tudo bem, também é parte do processo.' },
+      { texto: 'Segura', mensagem: 'Isso significa muito! Quero muita coisa com você.' },
+      { texto: 'Esperançosa', mensagem: 'Ainda temos tanto por viver... Vamos pensar no presente!' },
+      { texto: 'Confusa às vezes', mensagem: 'Tudo bem, também é parte do processo. Vamos conversar sobre isso?' },
     ],
   },
 ];
