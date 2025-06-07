@@ -3,16 +3,21 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/JogoMemoria.module.css';
 import cardBack from '../assets/card-back.svg';
+import bosqueMaia from '../assets/bosquemaia.jpg';
+import maosPraia from '../assets/maos-praia.jpg';
+import dateBurguer from '../assets/date-burguer.jpg';
+import coringa from '../assets/coringa.jpg';
+import museu from '../assets/date-museu-coreano.jpg';
 import coringaAudio from '../assets/coringa.mp3'; // adicione isso quando tiver o som
 
 const IMAGENS = [
-  'https://img.freepik.com/fotos-gratis/cachorro-de-raca-pura-sendo-fofo-em-um-estudio_23-2149016897.jpg?t=st=1744695425~exp=1744699025~hmac=4a526269257f957e2d56d15c4d9c9d4bec8b68e346ce3877154b62292d8b5bd7&w=740',
-  'https://img.freepik.com/fotos-gratis/retrato-de-cachorro-pequeno-em-estudio_23-2149016943.jpg?t=st=1744695536~exp=1744699136~hmac=c69a61880e072af7c17adfa34e95abb610975e8bee7755c7597bad2a42d249a3&w=740',
-  'https://img.freepik.com/fotos-gratis/belo-retrato-de-cachorro-spaniel-de-brinquedo-ingles_23-2149152036.jpg?t=st=1744695593~exp=1744699193~hmac=85708a7c4f73188fe73dc59636877bd3bf59355e377b6215fed8249ffe8489f1&w=740',
-  'https://img.freepik.com/fotos-gratis/cao-de-vista-frontal-com-a-lingua-de-fora-no-fundo-vermelho_23-2148415246.jpg?t=st=1744695622~exp=1744699222~hmac=1c80038f86f20be20a3bb9769250d5feb3eb3d88b4b0796095bfd72dbf37dbd1&w=740',
+  bosqueMaia,
+  maosPraia,
+  dateBurguer,
+  museu,
 ];
 
-const CORINGA_IMG = 'https://img.freepik.com/fotos-gratis/gatinho-cinza-com-parede-monocromatica-atras-dela_23-2148955113.jpg?t=st=1744695829~exp=1744699429~hmac=f18dca18b8522f98c2599be0b585f6d26cd3a0e0fe8f45605b478c62f7f674d6&w=740';
+const CORINGA_IMG = coringa;
 
 function embaralharCartas() {
   const pares = [...IMAGENS, ...IMAGENS];
