@@ -188,57 +188,110 @@ function Infografico() {
 
       <div className={styles.text1}>
         <p>
-          E aí, {nome && `${nome}`}, acertei alguma coisa? Pensei que acharia interessante um infográfico desse com informações que sei sobre você, espero que tenha gostado! Quero que saiba que no meu cérebro há uma parte designada apenas para a sua pessoa e isto compõe apenas algumas das milhares de informações que, ao longo desses quase 10 anos (onde 7 deles te desejei de longe), consegui observar e guardar com carinho na minha cabeça. Mas isso não é tudo! Se rolar a página mais pra baixo vai achar um mural e nele contém coisas que quero que saiba, aproveite aí!
+          E aí, {nome && `${nome}`}, acertei alguma coisa? Pensei que acharia interessante um infográfico desse com informações que sei sobre você, espero que tenha gostado! <br></br><br></br> Quero que saiba que no meu cérebro há uma parte designada apenas para a sua pessoa e isto compõe apenas algumas das milhares de informações que, ao longo desses quase 10 anos (onde 7 deles te desejei de longe), consegui observar e guardar com carinho na minha cabeça. <br></br><br></br> Mas isso não é tudo! Se rolar a página mais pra baixo vai achar um mural e nele contém coisas que quero que saiba, ê uma olhada!
           </p>
       </div>
       </section>
   
       <div className={styles.muralGrid}>
-        <div className={styles.red1}>
-          <p>Seu sorriso e olhos iluminam os meus dias!</p>
+
+        <div className='card'>
+          <div className='sticker-card'>
+            <img src={sticker1} alt="Sticker 1" className={`${styles.sticker} ${styles.sticker1}`} />
           </div>
 
-        <div className={styles.pink1}>
-          <p>Sua inteligência me deixa orgulhosa.</p>
+          <div className={styles.red1}>
+          <p>Seu sorriso e olhos iluminam os meus dias.</p>
         </div>
 
-        <div className={styles.green1}>
-          <p>Seu senso de humor é bobo e contagiante!</p>
         </div>
 
-        <div className={styles.green2}>
-          <p>O cuidado que tem com os outros é lindo.</p>
+        <div className='card'>
+          <div className='sticker-card'>
+            <img src={sticker2} alt="Sticker 2" className={`${styles.sticker} ${styles.sticker2}`} />
+          </div>
+          
+          <div className={styles.pink1}>
+            <p>Sua inteligência me deixa orgulhosa.</p>
+          </div>
         </div>
 
-        <div className={styles.red2}>
-          <p>Seus cachos dispensam comentários!</p>
+        <div className='card'>
+          <div className='sticker-card'>
+            
+          </div>
+
+          <div className={styles.green1}>
+            <p>Seu senso de humor é bobo e contagiante!</p>
+          </div>
         </div>
 
-        <div className={styles.pink2}>
-          <p>Seu foco no trabalho me excita...</p>
+        <div className='card'>
+          <div className='sticker-card'>
+            <img src={sticker3} alt="Sticker 3" className={`${styles.sticker} ${styles.sticker3}`} />
+          </div>
+
+          <div className={styles.green2}>
+            <p>Me encanta a forma como você enxerga o mundo.</p>
+          </div>
         </div>
 
-        <div className={styles.pink3}>
-          <p>O jeito que você fala me deixa boba.</p>
+        <div className='card'>
+          <div className='sticker-card'>
+            <img src={sticker4} alt="Sticker 4" className={`${styles.sticker} ${styles.sticker4}`} />
+          </div>
+
+          <div className={styles.red2}>
+            <p>Não há palavras que façam justiça aos seus cachos.</p>
+          </div>
+
         </div>
 
-        <div className={styles.green3}>
-          <p>Seus gemidos não devem passar despercebidos.. </p>
+        <div className='card'>
+          <div className='sticker-card'>
+            <img src={sticker5} alt="Sticker 5" className={`${styles.sticker} ${styles.sticker5}`} />
+          </div>
+
+          <div className={styles.pink2}>
+            <p>Seu foco no trabalho me excita...</p>
+          </div>
         </div>
 
-        <div className={styles.red3}>
-          <p>Seu comprometimento com o futuro é fofo!</p>
+        <div className='card'>
+          <div className='sticker-card'>
+            <img src={sticker6} alt="Sticker 6" className={`${styles.sticker} ${styles.sticker6}`} />
+            
+            <img src={sticker8} alt="Sticker 8" className={`${styles.sticker} ${styles.sticker8}`} />
+          </div>
+
+          <div className={styles.pink3}>
+            <p>O jeito que você fala me deixa boba.</p>
+          </div>
+
         </div>
+
+        <div className='card'>
+          <div className='sticker-card'>
+            <img src={sticker7} alt="Sticker 7" className={`${styles.sticker} ${styles.sticker7}`} />
+          </div>
+
+          <div className={styles.green3}>
+            <p>Fico muito feliz de ter te conhecido. </p>
+          </div>
+        </div>
+
+        <div className='card'>
+
+          <div className='sticker-card'>
+          </div>
+
+          <div className={styles.red3}>
+            <p>A dedicação com seu futuro também me estimula!</p>
+          </div>
+        </div>
+
       </div>
 
-      <img src={sticker1} alt="Sticker 1" className={`${styles.sticker} ${styles.sticker1}`} />
-      <img src={sticker2} alt="Sticker 2" className={`${styles.sticker} ${styles.sticker2}`} />
-      <img src={sticker3} alt="Sticker 3" className={`${styles.sticker} ${styles.sticker3}`} />
-      <img src={sticker4} alt="Sticker 4" className={`${styles.sticker} ${styles.sticker4}`} />
-      <img src={sticker5} alt="Sticker 5" className={`${styles.sticker} ${styles.sticker5}`} />
-      <img src={sticker6} alt="Sticker 6" className={`${styles.sticker} ${styles.sticker6}`} />
-      <img src={sticker7} alt="Sticker 7" className={`${styles.sticker} ${styles.sticker7}`} />
-      <img src={sticker8} alt="Sticker 8" className={`${styles.sticker} ${styles.sticker8}`} />
 
       <button className={styles.infNextButton} onClick={irParaJogoMemoria}>
         Próximo
