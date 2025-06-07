@@ -219,7 +219,7 @@ ul {
 .muralGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 1px 20px;
     padding-top: 40px;
     padding-bottom: 70px;
     position: relative;
@@ -255,6 +255,8 @@ ul {
 .red1 p, .red2 p, .red3 p, .pink1 p, .pink2 p, .pink3 p, .green1 p, .green2 p, .green3 p{
     color: var(--off-white);
     margin: 50px 10px;
+    padding-top: 40px;
+    font-size: 13px;
 }
 
 /* === STICKERS === */
@@ -265,43 +267,37 @@ ul {
 }
 
 .sticker1{
-    bottom: -580px;
     left: 40px;
+    top: 75px;
 }
 
 .sticker2{
-    bottom: -595px;
     right: 110px;
 }
 
 .sticker3{
-    bottom: -790px;
     left: 60px;
 }
 
 .sticker4{
-    bottom: -770px;
     right: 100px;
 }
 
 .sticker5{
-    bottom: -770px;
     right: 0px;
 }
 
 .sticker6{
-    bottom: -950px;
     left: 70px;
 }
 
 .sticker7{
-    bottom: -940px;
     right: 100px;
 }
 
 .sticker8{
-    bottom: -1090px;
     left: 80px;
+    bottom: 50px;
 }
 
 /* === BOTÃO "PRÓXIMO" === */
