@@ -12,6 +12,9 @@ function Yes() {
     <div className={styles.yesContainer}>
         {showConfetti && <Confetti width={width} height={height} />}
 
+        <h2> 🎉🎉 Ebaaaaaaa 🎉🎉 </h2>
+
+
         <img src={happyFace} alt="carinha-feliz" className={`${styles.slideInEllipticTopBack}`} />
 
 
