@@ -25,6 +25,7 @@ function Yes() {
         </div>
 
         <div>
+          <Suspense fallback={<div>Loading...</div>}></Suspense>
           <SpotifyPlayer />
           <p>Ouça assim que possível.</p>
         </div>
