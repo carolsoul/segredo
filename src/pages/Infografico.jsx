@@ -91,7 +91,7 @@ function Infografico() {
         </div>
 
         <div className={styles.lifeTime}>
-          <p>Médicos (eu) confirmam que viverá a mais de 80 anos</p>
+          <p>Médicos (eu) confirmam que viverá muitos anos felizes</p>
         </div>
       </div>
 
@@ -188,7 +188,7 @@ function Infografico() {
 
       <div className={styles.text1}>
         <p>
-          E aí, {nome && `${nome}`}, acertei alguma coisa? Pensei que acharia interessante um infográfico desse com informações que sei sobre você, espero que tenha gostado! <br></br><br></br> Quero que saiba que no meu cérebro há uma parte designada apenas para a sua pessoa e isto compõe apenas algumas das milhares de informações que, ao longo desses quase 10 anos (onde 7 deles te desejei de longe), consegui observar e guardar com carinho na minha cabeça. <br></br><br></br> Mas isso não é tudo! Se rolar a página mais pra baixo vai achar um mural e nele contém coisas que quero que saiba, ê uma olhada!
+          E aí, {nome && `${nome}`}, acertei alguma coisa? Pensei que acharia interessante um infográfico desse com informações que sei sobre você, espero que tenha gostado! <br></br><br></br> Quero que saiba que no meu cérebro há uma parte designada apenas para a sua pessoa e isto compõe apenas algumas das milhares de informações que, ao longo desses quase 10 anos (onde 7 deles te desejei de longe), consegui observar e guardar com carinho na minha cabeça. <br></br><br></br> Mas isso não é tudo! Se rolar a página mais pra baixo vai achar um mural e nele contém coisas que quero que saiba, dê uma olhada!
           </p>
       </div>
       </section>
