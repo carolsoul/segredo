@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
 import styles from '../styles/Yes.module.css';
 import feliz from '../assets/happy-face.svg';
-import SpotifyPlayer from "../components/SpotifyPlayer.jsx"
+
+const SpotifyPlayer = lazy(() => import('../components/SpotifyPlayer.jsx'));
 
 function Yes() {
   const [width, height] = useWindowSize();
