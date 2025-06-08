@@ -10,37 +10,42 @@ function FaceId() {
   const [status, setStatus] = useState('Iniciando câmera...')
 
   useEffect(() => {
-  startVideo(); // inicia a câmera imediatamente
-  loadModels().then(detectar); // em paralelo
+  const iniciar = async () => {
+    await startVideo();               // aguarda câmera iniciar
+    await loadModels();               // aguarda modelos
+    detectar();                       // só chama depois de tudo pronto
+  };
+
+  iniciar();
 
   return () => {
-    // limpar recursos ao desmontar
     if (videoRef.current?.srcObject) {
       videoRef.current.srcObject.getTracks().forEach(track => track.stop());
     }
   };
 }, []);
 
-const startVideo = () => {
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then((stream) => {
-          if (videoRef.current) {
-            videoRef.current.srcObject = stream;
-            setStatus('Reconhecendo você...')
-          }
-        })
-        .catch((err) => console.error('Erro ao acessar a câmera:', err));
-        setStatus('Erro ao acessar a câmera! :(')
-    };
+const startVideo = async () => {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    if (videoRef.current) {
+      videoRef.current.srcObject = stream;
+      setStatus('Reconhecendo você...');
+    }
+  } catch (err) {
+    console.error('Erro ao acessar a câmera:', err);
+    setStatus('Erro ao acessar a câmera! :(');
+  }
+};
 
 const loadModels = async () => {
   try {
     await Promise.all([
-      faceapi.nets.tinyFaceDetector.loadFromUri('/models/tiny_face_detector_model'),
-      faceapi.nets.faceLandmark68Net.loadFromUri('/models/face_landmark_68_model'),
-      faceapi.nets.faceRecognitionNet.loadFromUri('/models/face_recognition_model'),
-      faceapi.nets.ssdMobilenetv1.loadFromUri('/models/ssd_mobilenetv1_model')
-    ]);
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models/tiny_face_detector_model'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models/face_landmark_68_model'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/models/face_recognition_model'),
+]);
+console.log('Modelos carregados com sucesso!');
   } catch (err) {
     console.error('Erro ao carregar modelos:', err);
   }
@@ -49,9 +54,10 @@ const loadModels = async () => {
     const detectar = async () => {
       const imagemReferencia = await faceapi.fetchImage('/referencia.jpg');
       const resultadoReferencia = await faceapi
-        .detectSingleFace(imagemReferencia)
+        .detectSingleFace(imagemReferencia, new faceapi.TinyFaceDetectorOptions())
         .withFaceLandmarks()
         .withFaceDescriptor();
+
 
       if (!resultadoReferencia) {
         alert('Não foi possível detectar um rosto na imagem de referência.');
