@@ -1,10 +1,9 @@
 import React from 'react';
 import Confetti from 'react-confetti';
 import { useWindowSize } from '@react-hook/window-size';
-import SpotifyPlaylist from '../components/SpotifyPlaylist.jsx';
 import styles from '../styles/Yes.module.css';
 import feliz from '../assets/happy-face.svg';
-import SpotifyPlayer from '..components/SpotifyPlayer.jsx'
+import SpotifyPlayer from "../components/SpotifyPlayer.jsx"
 
 function Yes() {
   const [width, height] = useWindowSize();
@@ -16,7 +15,7 @@ function Yes() {
         <h2> 🎉🎉 Ebaaaaaaa 🎉🎉 </h2>
 
 
-        <img src={happyFace} alt="carinha-feliz" className={`${styles.slideInEllipticTopBack}`} />
+        <img src={feliz} alt="carinha-feliz" className={`${styles.slideInEllipticTopBack}`} />
 
 
         <div>
@@ -25,7 +24,7 @@ function Yes() {
         </div>
 
         <div>
-          <SpotifyPlaylist />
+          <SpotifyPlayer />
           <p>Ouça assim que possível.</p>
         </div>
 
