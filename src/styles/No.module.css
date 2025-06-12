@@ -12,6 +12,9 @@ body{
     text-align: center;
     padding: 80px;
     font-family: 'Poppins', sans-serif;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
 p{

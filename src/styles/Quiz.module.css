@@ -79,7 +79,7 @@ body{
   
 .pergunta {
     font-size: 15px;
-    padding: 20px;
+    padding: 20px 0;
     text-align: start;
     width: 100%;
     color: var(--off-white);

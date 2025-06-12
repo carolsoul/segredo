@@ -40,8 +40,12 @@
     margin: 1rem 0;
 }
 
+.instructionBox{
+    width: 320px;
+}
+
 .instructionContainer{
-    text-align: justify;
+    text-align: start;
     padding: 10px 20px;
     background: #fffdf3;
     border-radius: 10px;
@@ -51,7 +55,6 @@
 .instructionContainer p{
     font-size: 15px;
 }
-
 
 p{
     font-size: 12px;

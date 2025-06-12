@@ -18,7 +18,7 @@ function Home() {
 
       <img src={avatar} className={styles.avatar} alt="Avatar"/>
 
-      <div>
+      <div className={styles.instructionBox}>
         <div className={styles.instructionContainer}>
             <h3>Boa iluminação</h3>
             <p>Vá para um lugar bem iluminado onde dê para ver o seu rosto.</p>
