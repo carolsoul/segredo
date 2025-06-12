@@ -115,11 +115,12 @@ section{
     text-align: end;
     position: relative;
     top: -30px;
+    padding-left: 10px;
 }
 
 .tattoos {
     width: 60px;
-    margin-left: 30px;
+    margin-left: 15px;
     margin-top: 10px;
 }
 
@@ -155,7 +156,8 @@ section{
 .isabela{
     position: absolute;
     top: 240px;
-    left: 130px;
+    left: 115px;
+    width: 35%;
 }
 
 /* === TEXTO, ÍCONES, LISTAS === */
@@ -229,8 +231,8 @@ ul {
 }
 
 .red1, .pink1, .green1, .green2, .red2, .pink2, .pink3, .green3, .red3 {
-    width: 130px;
-    height: 150px;
+    width: 118px;
+    height: 140px;
     border-radius: 7px;
 }
 
@@ -252,11 +254,18 @@ ul {
 
 .red3 { background-color: var(--bright-red); transform: rotate(12deg); }
 
-.red1 p, .red2 p, .red3 p, .pink1 p, .pink2 p, .pink3 p, .green1 p, .green2 p, .green3 p{
+.red1 p, .red2 p, .red3 p, .pink1 p, .pink3 p, .green1 p, .green2 p{
     color: var(--off-white);
-    margin: 50px 10px;
+    margin: 25px 10px;
     padding-top: 40px;
-    font-size: 13px;
+    font-size: 11px;
+}
+
+.green3 p, .pink1 p, .pink2 p{
+    color: var(--off-white);
+    margin: 25px 10px;
+    padding-top: 40px;
+    font-size: 12px;
 }
 
 /* === STICKERS === */
@@ -267,32 +276,38 @@ ul {
 }
 
 .sticker1{
-    left: 40px;
-    top: 75px;
+    left: 30px;
+    top: 55px;
 }
 
 .sticker2{
-    right: 110px;
+    right: 90px;
+    top: 15px;
 }
 
 .sticker3{
-    left: 60px;
+    left: 45px;
+    bottom: 330px;
 }
 
 .sticker4{
-    right: 100px;
+    right: 70px;
+    bottom: 330px;
 }
 
 .sticker5{
     right: 0px;
+    top: 170px;
 }
 
 .sticker6{
-    left: 70px;
+    left: 50px;
+    bottom: 170px;
 }
 
 .sticker7{
-    right: 100px;
+    right: 80px;
+    bottom: 170px;
 }
 
 .sticker8{
