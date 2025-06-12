@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
 :root{
     --red: #7A1022;
     --green: #218A0A;
@@ -24,6 +29,7 @@
     align-items: center;
     justify-content: space-around;
     gap: 30px;
+    height: 100vh;
 }
 
 .nomeTitleContainer{
